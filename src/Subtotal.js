@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom';
 
 function Subtotal() {
     const history = useHistory();
-    const { basket } = useGlobalContext();
+    const { basket, user } = useGlobalContext();
     return (
         <div className="subtotal">
             <CurrencyFormat renderText={(value) =>(
@@ -18,7 +18,7 @@ function Subtotal() {
                     <p className="subtotal_text_p">Your first order qualifies for FREE Delivery. Select this option at checkout. <a href="https://www.amazon.in/b?node=15765571031&pop-up=1">Details</a></p>
                 </div>
                 
-                <p>
+                <p className="subtotal_price">
                     Subtotal({basket.length} Items): <strong>{`${value}`}</strong>
                 </p>
                 <small className="subtotal_gift">
@@ -34,7 +34,7 @@ function Subtotal() {
             prefix={"$"}
             ></CurrencyFormat>
 
-            <button onClick={() => history.push('/payment')}>Proceed To CheckOut</button>
+            <button onClick={() => history.push(user?'/payment':'/login')}>Proceed To Buy</button>
             
         </div>
     )

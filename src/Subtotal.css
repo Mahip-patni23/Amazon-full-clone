@@ -26,6 +26,7 @@
   background-color: rgb(255, 220, 25);
   border: none;
   border-radius: 0.7rem;
+  cursor: pointer;
 }
 
 .subtotal > button:hover {
@@ -40,6 +41,10 @@
 
 .subtotal_text_p {
   font-size: 12px;
+}
+
+.subtotal_price {
+  font-size: 20px;
 }
 
 .subtotal_text_p > a {

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 10px;
   padding: 20px;
   width: 100%;
@@ -19,22 +19,36 @@
 
 .product_rating {
   display: flex;
+  margin-bottom: 10px;
 }
 
-.product > img {
+.product_image {
   max-height: 150px;
   width: 100%;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.product_deal {
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(207, 24, 24);
+  display: inline;
+  font-size: 0.8rem;
 }
 
 .product_price {
-  margin-top: 5px;
+  margin-top: 10px;
+  color: rgb(207, 24, 24);
+}
+
+.product_price > strong {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .product_info {
-  height: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .product > button {
@@ -44,8 +58,29 @@
   margin-top: 10px;
   font-weight: bold;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .product > button:hover {
   background-color: rgb(240, 198, 12);
+}
+
+.product_delivery {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.product_delivery > p {
+  font-size: 0.9rem;
+  color: rgb(70, 70, 70);
+}
+
+.product_delivery > p > span {
+  font-weight: 600;
+}
+
+.product_freeDelivery {
+  color: rgb(65, 65, 65);
+  margin-top: 10px;
 }

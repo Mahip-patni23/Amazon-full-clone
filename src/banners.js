@@ -1,0 +1,47 @@
+export const banners = [
+    {
+        id:1,
+        image:"https://m.media-amazon.com/images/I/71x4THIwHML._SX3000_.jpg"
+    },
+    {
+        id:11,
+        image:"https://m.media-amazon.com/images/I/71SSL5YWpxL._SX3000_.jpg"
+    },
+    {
+        id:2,
+        image:"https://m.media-amazon.com/images/I/51jKifqW4XL._SX3000_.jpg"
+    },
+    {
+        id:3,
+        image:"https://m.media-amazon.com/images/I/6116+2JzhML._SX3000_.jpg"
+    },
+    {
+        id:4,
+        image:"https://m.media-amazon.com/images/I/71x-CUj+kqL._SX3000_.jpg"
+    },
+    {
+        id:5,
+        image:"https://m.media-amazon.com/images/I/61b7cbIUXUL._SX3000_.jpg"
+    },
+    {
+        id:6,
+        image:"https://m.media-amazon.com/images/I/61wnMc-KbYL._SX3000_.jpg"
+    },
+    {
+        id:7,
+        image:"https://m.media-amazon.com/images/I/71FzQCchyoL._SX3000_.jpg"
+    },
+    {
+        id:8,
+        image:"https://m.media-amazon.com/images/I/61hxMmAcPiL._SX3000_.jpg"
+    },
+    {
+        id:9,
+        image:"https://m.media-amazon.com/images/I/51PL6-WGyML._SX3000_.jpg"
+    },
+    {
+        id:10,
+        image:"https://m.media-amazon.com/images/I/71PkAMs1-+L._SX3000_.jpg"
+    }
+]
+

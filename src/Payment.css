@@ -29,6 +29,8 @@
 
 .payment_items {
   flex: 0.8;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .payment_details {

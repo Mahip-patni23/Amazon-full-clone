@@ -1,0 +1,129 @@
+.submenu {
+  background: white;
+  box-shadow: 2px 2px 10px black;
+  position: absolute;
+  z-index: 10;
+  padding: 20px;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  display: none;
+  transition: all 0.3s linear;
+  width: 30%;
+}
+
+.submenu.show {
+  display: block;
+}
+
+.submenu::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgb(255, 255, 255);
+  position: absolute;
+  top: -5px;
+  left: 61%;
+  transform: translateX(-50%);
+}
+
+.submenu_signIn {
+  border-bottom: 1px solid rgb(226, 226, 226);
+  text-align: center;
+}
+
+.submenu_signIn_btn {
+  width: 200px;
+  height: 35px;
+  background-color: rgb(240, 198, 12);
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: all 0.3s linear;
+}
+
+.submenu_signIn_btn:hover {
+  background-color: rgb(209, 171, 0);
+}
+
+.submenu_newCustomer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.submenu_newCustomer > p {
+  font-size: 0.75rem;
+  color: rgb(95, 95, 95);
+  font-weight: 500;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.submenu_startHere {
+  color: rgb(0, 54, 153);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.submenu_startHere:hover {
+  color: rgb(219, 143, 1);
+  text-decoration: underline;
+}
+
+.submenu_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submenu_col {
+  padding: 10px;
+}
+
+.submenu_col_2 {
+  border-left: 1px solid rgb(231, 231, 231);
+}
+
+.submenu_col > h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.submenu_col > p {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  color: rgb(61, 61, 61);
+  font-weight: 490;
+  cursor: pointer;
+}
+
+.submenu_shoppingList {
+  border-bottom: 1px solid rgb(231, 231, 231);
+  padding-bottom: 5px;
+}
+
+.submenu_col > p:hover {
+  color: rgb(182, 118, 0);
+  text-decoration: underline;
+}
+
+.submenu_signout {
+  border-top: 1px solid rgb(231, 231, 231);
+  padding-top: 10px;
+}
+
+.submenu_signout > p {
+  font-size: 0.85rem;
+  color: rgb(61, 61, 61);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.submenu_signout > p:hover {
+  color: rgb(173, 113, 0);
+  text-decoration: underline;
+}

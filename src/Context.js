@@ -1,5 +1,5 @@
 import React from 'react';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import { useContext } from 'react';
 import { reducer } from './Reducer';
 
@@ -24,6 +24,18 @@ export const getBasketTotal = (basket) => {
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+    const [location, setLocation] = useState({});
+
+    const openSubmenu = (text, coordinates) => {
+        setLocation(coordinates);
+        setIsSubmenuOpen(true)
+    }
+
+    const closeSubmenu = () => {
+        setIsSubmenuOpen(false);
+    }
+
     const addToCart = (item) => {
         /* console.log(item); */
         dispatch({type: 'ADD ITEM', payload: item})
@@ -46,7 +58,7 @@ const AppProvider = ({children}) => {
         dispatch({type: "EMPTY BASKET"});
     }
 
-    return <AppContext.Provider value={{...state, addToCart, removeFromCart, authorizeUser, clearBasket}}>
+    return <AppContext.Provider value={{...state, addToCart, removeFromCart, authorizeUser, clearBasket, openSubmenu, isSubmenuOpen, location, closeSubmenu}}>
         {children}
     </AppContext.Provider>
 }

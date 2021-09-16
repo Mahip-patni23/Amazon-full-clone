@@ -4,23 +4,45 @@ import SearchIcon from '@material-ui/icons/Search';
 import AddShoppingCartOutlinedIcon from '@material-ui/icons/AddShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from './Context';
-import {auth} from './firebase';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 
 function Header() {
-    const {basket, user} = useGlobalContext();
+    const {basket, user, openSubmenu, closeSubmenu} = useGlobalContext();
 
-    const userAuthentication = () => {
-        if(user){
-            auth.signOut();
+    const displaySubmenu = (e) => {
+        const currentPage = e.target.textContent;
+        const currentBtn = e.target.getBoundingClientRect();
+        const center = (currentBtn.left + currentBtn.right)/2;
+        const bottom = currentBtn.bottom;
+        openSubmenu(currentPage, {center, bottom});
+    }
+
+    const handleSubmenu = (e) => {
+        if(!e.target.classList.contains("header_submenu_container")){
+            closeSubmenu();
         }
     }
 
     return (
-        <div className="header">
+        <div className="header" onMouseOver={handleSubmenu}>
             <Link to='/'>
                 <img className="header_logo" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon-logo"/>
             </Link>
+
+            <div className="header_option_location">
+                <LocationOnOutlinedIcon fontSize="small"></LocationOnOutlinedIcon>
+                <div>
+                    <span className="header_optionOne">
+                    {user? `Deliver to ${user?.email}`:"Hello"}
+                </span>
+
+                <span className="header_optionTwo">
+                    Select your address
+                </span>
+                </div>
+            </div>
 
             <div className="header_search">
                 <input className="header_searchInput" type="text" />
@@ -28,15 +50,15 @@ function Header() {
             </div>
 
             <div className="header_nav">
-                <Link to={!user && '/login'}>
-                    <div onClick={userAuthentication} className="header_option">
-                       <span className="header_optionOne">
+                <Link to={!user && '/login'} className="link">
+                    <div className="header_option header_submenu_container">
+                       <span className="header_optionOne header_submenu_container">
                            Hello, {user? user.email:"Sign in"}
                         </span>
                         
-                        <span className="header_optionTwo">
-                           {user?"Sign out":"Account & Lists"}
-                        </span>         
+                        <span className="header_optionTwo header_submenu_container header_submenu_heading" onMouseOver={displaySubmenu}>
+                           Account & Lists <ArrowDropDownIcon fontSize="small"></ArrowDropDownIcon>
+                        </span>        
                      </div>
                 </Link>
 

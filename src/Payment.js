@@ -13,7 +13,7 @@ import { db } from './firebase';
 
 
 function Payment() {
-    const {basket, user, clearBasket} = useGlobalContext();
+    const {basket, user, clearBasket, closeSubmenu} = useGlobalContext();
     const stripe = useStripe();
     const elements = useElements();
     const history = useHistory();
@@ -88,7 +88,7 @@ function Payment() {
     }
     
     return (
-        <div className="payment">
+        <div className="payment" onMouseOver={closeSubmenu}>
             <h1>Checkout <Link to='/checkout'>({basket.length} items)</Link></h1>
             <div className="payment_container">
                 <div className="payment_section">
@@ -97,8 +97,12 @@ function Payment() {
                     </div>
                     <div className="payment_address">
                         <p>{user?.email}</p>
-                        <p>Flat No-1907, Tower-B24, Supertech Ecovillage 3</p>
-                        <p>Gautam Budh Nagar, Greater Noida West</p>
+                        <p>Flat No-1907, Tower-B24</p>
+                        <p>Supertech Ecovillage 3</p>
+                        <p>Sector 16B, Gautam Budh Nagar</p>
+                        <p>Greater Noida West, UTTAR PRADESH</p>
+                        <p>201009</p>
+                        <p>India</p>
                     </div>
                 </div>
 
